@@ -1,0 +1,31 @@
+.header {
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#array {
+	background-color: white;
+	height: 500px;
+	width: 850px;	
+	margin: auto;
+	position: relative;
+	margin-top: 64px;
+}
+
+.block {
+	width:40px;
+	background-color: #777671;
+	position: absolute;
+	bottom: 0px;	
+}
+
+.block_id {
+	position: absolute;
+	color: black;
+	margin-top: -20px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+	
