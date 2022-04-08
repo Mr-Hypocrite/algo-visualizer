@@ -1,16 +1,35 @@
+//Function to generate random arrays and display them
 var container = document.getElementById("array");
-function generatearray() {
-	for (var i = 0; i < 20; i++) {
+function generatearray(noofbars=105)
+{
+	for (var i = 0; i <noofbars; i++)
+	{
 		var value = Math.ceil(Math.random() * 100);
 		var array= document.createElement("div");
 		array.classList.add("block");
-		array.style.height = `${value * 5}px`;
-		array.style.transform = `translate(${i * 45}px)`;
-		var array_label = document.createElement("label");
-		array_label.classList.add("block_id");
-		array_label.innerText = value;
-    		array.appendChild(array_label);
+		array.style.height = `${value *4}px`;
+		array.style.transform = `translate(${i *10}px)`;
 		container.appendChild(array );
 	}
 }
-generatearray();    
+generatearray();
+//Function to remove the bars from the screen
+function removeBars()
+{
+    document.querySelectorAll(".block").forEach((node) =>
+	{
+        node.remove();
+    });
+}
+//Linking the "New array" to the above funnction to generate random arrays on click
+document.getElementById("new").addEventListener("click", () => {
+    removeBars();
+   generatearray();
+});
+//Scaling the array size according to the "Number of bars" slider
+let arraySize = document.querySelector('#number');
+arraySize.addEventListener('input', function()
+{
+    removeBars();
+    generatearray(parseInt(arraySize.value));
+});

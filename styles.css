@@ -1,31 +1,33 @@
-.header {
-	font-size: 30px;
-	text-align: center;
-	font-weight: bold;
+body{
+    background-color: rgb(52,58, 64);
+    text-align: center;
 }
-
-#array {
-	background-color: white;
-	height: 500px;
-	width: 850px;	
-	margin: auto;
-	position: relative;
-	margin-top: 64px;
+h1 {width:100%;
+    display: inline;
+    color: white;
+    text-align: center;
 }
-
-.block {
-	width:40px;
-	background-color: #777671;
-	position: absolute;
-	bottom: 0px;	
+label{
+    padding-left: 9;
+    padding-right: 9;
+    font-size:19;
+    color: rgb(255, 255, 255);
 }
-
-.block_id {
-	position: absolute;
-	color: black;
-	margin-top: -20px;
-	font-weight: bold;
-	width: 100%;
-	text-align: center;
+.left{
+    margin-top:20px;
+    float: left;
+    padding-left:15px;
+} 
+.right{
+    margin-top:20px;
+    float: right;
+    padding-right:15px;
 }
-	
+.block{
+    background:yellow;
+    border: 1pt solid black;
+    width: 10px;
+	position:absolute;
+    left:150px;
+	top:120px;	
+}
