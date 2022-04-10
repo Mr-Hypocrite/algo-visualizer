@@ -10,7 +10,7 @@ let width, noOfBars, padding;
 let arrayOfBars = [];
 
 //Function to generate random arrays and display them
-function generatearray(noOfBars=50)
+function generatearray(noOfBars=100)
 {
 	arrayOfBars = [];
 
@@ -91,30 +91,27 @@ function sleep(ms) {
 const bubbleSort = (arr) => {
 	let j = 1;
 
-	for (i = 0; i < arr.length ; i++) {
-		function timer() {
-			for (k = 0; k < (arr.length - j); k++)
-			{
-				setTimeout(() => {
-					if (arr[k + 1] < arr[k]) {
-						[arr[k + 1], arr[k]] = [arr[k], arr[k + 1]]
-						generateSorted(arr)
-						console.log(arr)
-					}
-	
-					if (k < arr.length - j) {
-						abc()
-					}
-				}, 1000)
+	const sort = (i, k) => {
+		setTimeout(() => {
+			if (arr[k + 1] < arr[k]) {
+				[arr[k + 1], arr[k]] = [arr[k], arr[k + 1]]
 			}
+			generateSorted(arr)
+			console.log(arr)
+		}, i * 100)
+	}
+
+	for (let i = 0; i < arr.length; i++) {
+
+		for (let k = 0; k < arr.length - j; k++)
+		{
+			sort(i, k)
 		}
 
-		timer()
 		j++
 	}
 
 	console.log(arr)
-
 }
 
 // Targetting Sorting Buttons and Assigning Respective Functions
