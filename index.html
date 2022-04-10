@@ -9,22 +9,26 @@
     <body>
         <h1 >SORTING VISUALIZER</h1>
             <form >
-                <div id="array"></div>
-                    <div class="left">
-                        <input type="button" id="new" class="btn btn-outline-success " value="New Array">
-                    <span>
-                         <label>Number of bars</label><input id="number" type="range"  min=5 max=120 step="1" value="105">
-                         <label>Speed</label><input id="speed" type="range"  min=1 max=10 step="1" value="1">
-                   </span> 
-                    </div>
-                    <div class="right">
-                        <input type="button" id="bubble" class="btn btn-outline-info "  value="Bubble Sort">
-                        <input type="button" id="select" class="btn btn-outline-info"value="Selection Sort">
-                        <input type="button" id="insert"class="btn btn-outline-info" value="Insertion Sort">
-                        <input type="button" id="quick" class="btn btn-outline-info"value="Quick Sort">
-                        <input type="button" id="merge"class="btn btn-outline-info " value="Merge Sort">
-                    </div>
+                <div class="left">
+                    <input type="button" id="new" class="btn btn-outline-success " value="New Array">
+                <span>
+                        <label>Number of bars</label><input id="number" type="range"  min=5 max=60 step="1" value="60">
+                        <label>Speed</label><input id="speed" type="range"  min=1 max=10 step="1" value="1">
+                </span> 
+                </div>
+                <div class="right">
+                    <input type="button" id="bubble" class="btn btn-outline-info "  value="Bubble Sort">
+                    <input type="button" id="select" class="btn btn-outline-info"value="Selection Sort">
+                    <input type="button" id="insert"class="btn btn-outline-info" value="Insertion Sort">
+                    <input type="button" id="quick" class="btn btn-outline-info"value="Quick Sort">
+                    <input type="button" id="merge"class="btn btn-outline-info " value="Merge Sort">
+                </div>
             </form>
+
+            <div class="center">
+                <div id="array"></div>
+            </div>
+
             <script src="index.js"></script>
     </body>
 </html>
