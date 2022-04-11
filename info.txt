@@ -1,0 +1,41 @@
+*DATA STRUCTURE: A data structure is a specialized format for organizing, processing, retrieving and storing data. 
+There are several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose. 
+Data structures make it easy for users to access and work with the data they need in appropriate ways.
+
+ADT: The functional definition of a data structure is known as ADT (Abstract Data Type) which is independent of implementation.
+An ADT is a mathematical model of a data structure that specifies the type of data stored, the operations supported on them, and the types of parameters of the operations. 
+An ADT specifies what each operation does, but not how it does it. Typically, an ADT can be implemented using one of many different data structures.
+
+*CLASSIFICATION OF DATA STRUCTURES:
+
+Data structures can be classified as:
+a) Simple data structure b) Compound data structure 
+
+a) Simple data structure can be constructed with the help of primitive data structure. 
+A primitive data structure used to represent the standard data types of any one of the computer languages.
+Variables, arrays, pointers, structures, unions, etc. are examples of primitive data structures.
+
+b) Compound data structure can be constructed with the help of any one of the primitive data structure and it is having a specific functionality. 
+It can be designed by user. It can be classified as i) Linear data structure ii) Non-linear data structure
+
+i) Linear data structures can be constructed as a continuous arrangement of data elements in the memory. It can be constructed by using array data type.
+The following list of operations applied on linear data structures 1. Add an element 2. Delete an element 
+3. Traverse 4. Sort the list of elements 5. Search for a data element 
+For example Stack, Queue, Tables, List, and Linked Lists.
+
+ii) Non-linear data structure can be constructed as a collection of randomly distributed set of data item joined together by using a special pointer.
+The following list of operations applied on non-linear data structures. 1. Add elements 2. Delete elements 3. Display the elements 
+4. Sort the list of elements 5. Search for a data element 
+For example Tree, Decision tree, Graph and Forest.
+
+*ARRAY AS DATA STRUCTURE: An array is a linear data structure that collects elements of the same data type and stores them in contiguous and adjacent memory locations.
+Applications of Array as Data Structure- i) Searching ii) Sorting iii) Matrix Operations iv) Static implmentation of Data Structres like Stack, Queue, Tree, Graph et cetera.
+
+
+
+*LINKED LIST
+*STACK
+*QUEUE
+*TREE
+*GRAPH
+*HASH TABLE
