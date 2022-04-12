@@ -23,18 +23,12 @@ label{
     float: right;
     padding-right:15px;
 }
-.block {
+.block{
     background:yellow;
     border: 1pt solid black;
     width: 10px;
-    display: inline-block;
-    margin-right: -10px;
-}
-
-.center {
-    margin-top: 10rem;
-}
-
-#array {
-    display: flex;
+	position:absolute;
+    left:150px;
+	top:120px;
+    transition: 0.1s all ease;    	
 }

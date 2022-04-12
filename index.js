@@ -75,7 +75,7 @@ arraySize.addEventListener('input', function()
 	generatearray(parseInt(arraySize.value));
 });
 
-function sleep(milliseconds) {
+/*function sleep(milliseconds) {
 	const date = Date.now();
 	let currentDate = null;
 	do {
@@ -116,4 +116,26 @@ const bubbleSort = (arr) => {
 
 // Targetting Sorting Buttons and Assigning Respective Functions
 
-document.querySelector('#bubble').addEventListener("click", () => bubbleSort(arrayOfBars))
+document.querySelector('#bubble').addEventListener("click", () => bubbleSort(arrayOfBars))*/
+//function to swap bars
+function swap(el1, el2) {
+    console.log('In swap()');
+    
+    let temp = el1.style.height;
+    el1.style.height = el2.style.height;
+    el2.style.height = temp;
+    
+}
+
+function sleep(millisec) { 
+    return new Promise(resolve => { 
+        setTimeout(() => { resolve('') }, millisec); 
+    }) 
+}
+
+// Event listener to update delay time 
+let delay =300;
+let delayTime = document.querySelector('#speed');
+delayTime.addEventListener('input', function(){
+    delay =parseInt(delayTime.value);
+});
