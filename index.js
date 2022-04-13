@@ -3,7 +3,7 @@
 
 // Global Vars
 let screenWidth = window.innerWidth;
-var container = document.getElementById("array")
+let container = document.getElementById("array")
 let outerContainer = document.querySelector('.center');
 let width, noOfBars, padding;
 
@@ -14,10 +14,10 @@ function generatearray(noOfBars=100)
 {
 	arrayOfBars = [];
 
-	for (var i = 0; i < noOfBars; i++)
+	for (let i = 0; i < noOfBars; i++)
 	{
-		var value = Math.ceil(Math.random() * 100);
-		var array= document.createElement("div");
+		let value = Math.ceil(Math.random() * 100);
+		let array= document.createElement("div");
 		array.classList.add("block");
 		array.style.height = `${value * 4}px`;
 
@@ -36,7 +36,7 @@ const generateSorted = (arr) => {
 	removeBars()
 
 	arr.map((element, index) => {
-		var array= document.createElement("div");
+		let array= document.createElement("div");
 		array.classList.add("block");
 		array.style.height = `${element}px`;
 
@@ -75,48 +75,6 @@ arraySize.addEventListener('input', function()
 	generatearray(parseInt(arraySize.value));
 });
 
-/*function sleep(milliseconds) {
-	const date = Date.now();
-	let currentDate = null;
-	do {
-	  currentDate = Date.now();
-	} while (currentDate - date < milliseconds);
-}
-
-function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-  
-
-const bubbleSort = (arr) => {
-	let j = 1;
-
-	const sort = (i, k) => {
-		setTimeout(() => {
-			if (arr[k + 1] < arr[k]) {
-				[arr[k + 1], arr[k]] = [arr[k], arr[k + 1]]
-			}
-			generateSorted(arr)
-			console.log(arr)
-		}, i * 100)
-	}
-
-	for (let i = 0; i < arr.length; i++) {
-
-		for (let k = 0; k < arr.length - j; k++)
-		{
-			sort(i, k)
-		}
-
-		j++
-	}
-
-	console.log(arr)
-}
-
-// Targetting Sorting Buttons and Assigning Respective Functions
-
-document.querySelector('#bubble').addEventListener("click", () => bubbleSort(arrayOfBars))*/
 //function to swap bars
 function swap(el1, el2) {
     console.log('In swap()');
@@ -133,9 +91,9 @@ function sleep(millisec) {
     }) 
 }
 
-// Event listener to update delay time 
-let delay =300;
+// Event listener to update delay time
+delay = 700 - 20
 let delayTime = document.querySelector('#speed');
 delayTime.addEventListener('input', function(){
-    delay =parseInt(delayTime.value);
+    delay = parseInt(700 - delayTime.value);
 });
