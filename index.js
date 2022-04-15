@@ -2,95 +2,83 @@
 
 
 // Global Vars
-let screenWidth = window.innerWidth;
+let screenWidth = window.innerWidth
 let container = document.getElementById(`array`)
-let outerContainer = document.querySelector(`.center`);
-let width, noOfBars, padding;
+let outerContainer = document.querySelector(`.center`)
+let width, noOfBars, padding
+let arraySize = document.querySelector(`#number`)
 
-let arrayOfBars = [];
+width = (screenWidth * 0.8) / 60
+
+//Scaling the array size according to the `Number of bars` slider
+arraySize.addEventListener(`input`, () => {
+	noOfBars = parseInt(arraySize.value)
+	width = (screenWidth * 0.8) / arraySize.value
+    removeBars()
+	generatearray(parseInt(arraySize.value))
+});
 
 //Function to generate random arrays and display them
-const generatearray = (noOfBars=100) => {
-	arrayOfBars = [];
+const generatearray = (noOfBars = 60) => {
 
 	for (let i = 0; i < noOfBars; i++)
 	{
-		let value = Math.ceil(Math.random() * 100);
-		let array= document.createElement(`div`);
+		let value = Math.ceil(Math.random() * 100)
+		let array= document.createElement(`div`)
 		array.classList.add(`block`);
-		array.style.height = `${value * 4}px`;
+		array.style.height = `${ value * 6 }px`
+		array.style.width = `${ width }px`
+		array.style.marginRight = `-${ width - 2 }px`
+		if (width > 25) {
+			array.innerHTML = `<h3>${ value }</h3>`
+		}
 
-		arrayOfBars.push(value * 4);
-
-		array.style.transform = `translate(${i * 10}px)`;
-		padding = (screenWidth - (noOfBars * 10)) / 2;
-		// array.appendChild(<span class=`invisible`>${ value }</span>)
-		container.appendChild(array);
-		document.querySelector(`.center`).style.padding = `0 ${ padding }px`;
+		array.style.transform = `translate(${i * width}px)`
+		padding = (screenWidth - (noOfBars * (width + 2))) / 2
+		container.appendChild(array)
+		document.querySelector(`.center`).style.padding = `0 ${ padding }px`
 	}
-	// console.log(arrayOfBars);
 }
 
-const generateSorted = (arr) => {
-	removeBars()
-
-	arr.map((element, index) => {
-		let array= document.createElement(`div`);
-		array.classList.add(`block`);
-		array.style.height = `${element}px`;
-
-		array.style.transform = `translate(${index * 10}px)`;
-		// array.appendChild(<span class=`invisible`>${ value }</span>)
-		container.appendChild(array);
-	})
-	padding = (screenWidth - (arr.length * 10)) / 2;
-	document.querySelector(`.center`).style.padding = `0 ${ padding }px`;
-
+// Generating Array on Load
+window.onload = () => {
+	generatearray()
 }
-
-generatearray();
 
 //Function to remove the bars from the screen
 const removeBars = () => {
     document.querySelectorAll(`.block`).forEach((node) =>
 	{
-        node.remove();
+        node.remove()
     });
 }
 
-//Linking the `New array` to the above funnction to generate random arrays on click
+//New Array Button Function to Generate New Array
 document.getElementById(`new`).addEventListener(`click`, () => {
-    removeBars();
-   	generatearray();
-});
+    removeBars()
+   	generatearray(arraySize.value)
+})
 
-//Scaling the array size according to the `Number of bars` slider
-let arraySize = document.querySelector(`#number`);
-arraySize.addEventListener(`input`, () => {
-	noOfBars = parseInt(arraySize.value)
-    removeBars();
-	generatearray(parseInt(arraySize.value));
-});
-
-//function to swap bars
+//Function to swap bars
 const swap = (el1, el2) => {
-    console.log(`In swap()`);
     
-    let temp = el1.style.height;
-    el1.style.height = el2.style.height;
-    el2.style.height = temp;
+	[el1.style.height, el2.style.height] = [el2.style.height, el1.style.height]
+	let temp = el1.innerHTML
+	el1.innerHTML  = el2.innerHTML
+	el2.innerHTML = temp
     
 }
 
+// Sleep/Delay Function
 const sleep = (millisec) => { 
     return new Promise(resolve => { 
-        setTimeout(() => { resolve(``) }, millisec); 
+        setTimeout(() => { resolve(``) }, millisec);
     }) 
 }
 
 // Event listener to update delay time
-delay = 700 - 20
-let delayTime = document.querySelector(`#speed`);
+delay = 1000 - 20
+let delayTime = document.querySelector(`#speed`)
 delayTime.addEventListener(`input`, () => {
-    delay = parseInt(700 - delayTime.value);
-});
+    delay = parseInt(1000 - delayTime.value)
+})

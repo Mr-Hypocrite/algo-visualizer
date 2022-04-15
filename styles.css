@@ -26,10 +26,19 @@ label{
 .block{
     background:yellow;
     border: 1pt solid black;
-    width: 10px;
     display: inline-block;
-    margin-right: -10px;
-    transition: 0.1s all ease;    	
+    transition: 0.1s all ease;
+    position: relative;
+    text-align: center;
+}
+
+.block h3 {
+    color: #fff;
+    font-size: 1rem;
+    position: absolute;
+    top: -25;
+    right: 0;
+    left: 0;
 }
 
 .center {
