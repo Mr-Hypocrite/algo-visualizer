@@ -9,6 +9,9 @@ const select = async () => {
             if (parseInt(ele[min].style.height) > parseInt(ele[j].style.height)) {
                 await sleep(delay);
                 swap(ele[min], ele[j]);
+                ele[min].style.background = `#B9F8D3`;
+                ele[j].style.background = `#B9F8D3`;
+                await sleep(delay);
                 j=min;
             }
 
