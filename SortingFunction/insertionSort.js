@@ -28,6 +28,7 @@ async function insert () {
             j = j - 1
 
         }
+         b[i].style.background = `green`
     }
 }
 
